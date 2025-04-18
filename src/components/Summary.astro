@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import headerRelations from "@assets/header_decorative-relationships.png"
 ---
 
 <div class="container">
@@ -8,7 +10,7 @@
     </div>
     
     <div class="content-image">
-        <img src="/header_decorative-relationships.png" alt="Imagen de portada">
+        <Image src={ headerRelations } alt="Imagen de portada" width={350} />
     </div>
 
     <div class="content-atributes">
@@ -30,14 +32,13 @@
         background-image: url("/hexagonal_background.png");
         background-repeat: no-repeat;
         background-size: 100%;
+        border-bottom-width: 12px;
+        border-bottom-color: #92d050;
+        border-bottom-style: solid;
 
         div {
             flex: 0 1 30%;
         }
-    }
-
-    .content-image {
-
     }
 
     .content-atributes {
@@ -51,7 +52,6 @@
             font-size: medium;
             color: #002060;
             font-weight: bold;
-            
 
             span {
                 display: inline-block;
@@ -78,9 +78,5 @@
         font-weight: bold;
         text-transform: uppercase;
         font-size: medium;
-    }
-
-    img {
-        max-width: 100%;
     }
 </style>

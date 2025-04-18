@@ -1,0 +1,141 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import iconFeisa from "@assets/icon_feisa.png";
+import imgGhanCarlos from "@assets/img_ghan_carlos.png"
+---
+
+<BaseLayout title="Perfil Ghan Carlos Areiza">
+    <section>
+        <div class="profile">
+            <h1>Oferta de servicios</h1>
+            <h2>Análisis de Datos e información corporativa aplicada a la Inteligencia de Negocios</h2>
+            
+            <p>Profesional (licenciado egresado de la Universidad Central de Venezuela) en Ciencias de la Información -documentación, datos y archivos-, con más de 16 años de experiencia en implementación de modelos de gestión de la información documental electrónica y datos. Modelador de iniciativas para la transformación digital como brújalas estratégicas e inteligencia de negocios en las empresas.</p>
+            <p>Diseñador de arquitectura de repositorios digitales alineados a los procesos de  gobernabilidad de datos estructurados y no estructurados. Acompañamiento en modelamiento de procesos administrativos. Gestor de indicadores para análisis de data.</p>
+            <p>Con experiencia en:​</p>
+
+            <div class="experience">
+                <p>
+                    GRUPO FEISA _ Fondo de Empleados <br>
+                    <span>Analista Gestión Documental</span>
+                </p>
+                <Image src={ iconFeisa } alt="Ícono del Grupo Feisa" width={150} />
+            </div>
+            
+            <div class="experience">
+                <p>
+                    GRUPO NUTRESA <br>
+                    <span>Analista Gestión Documental</span>
+                </p>
+                <img src="/icon_nutresa.svg" alt="Ícono Grupo Nutresa" width="60">
+            </div>
+            
+            <div class="experience">
+                <div>
+                    <p>
+                        IRON MOUNTAIN S.A.S _ COLOMBIA <br>
+                        <span>Técnico Instrumentos archivísticos​</span>
+                    </p>
+                    <p class="corp-projects">EAFIT │ Cruz Roja │ Celsia │ Synlab Laboratorios │ Cryogas</p>
+                </div>
+                <img src="/icon_ironMountain.svg" alt="Ícono de Iron Mountain SAS" width="150">
+            </div>
+            
+            <div class="experience">
+                <p>
+                    BANESCO BANCO UNIVERSAL​ <br>
+                    <span>Especialista Proyectos Especiales</span>
+                </p>
+                <img src="/icon_banesco.png" alt="Ícono del Banco Banesco Universal" width="150">
+            </div>
+        </div>
+
+        <div class="image-profile">
+            <h1>Ghan Carlos Areiza Salazar</h1>
+            <Image src={imgGhanCarlos} alt="Imagen de Ghan Carlos Areiza Salazar" width={300} class="image" />
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    section {
+        width: 85%;
+        margin: 0 auto;
+        display: flex;
+        gap: 10px;
+    }
+
+    .profile {
+        flex: 2;
+        margin-top: 40px;
+
+        h1 {
+            text-transform: uppercase;
+            color: #747474;font-weight: bold;
+        }
+
+        h2 {
+            color: #002060;
+            font-size: medium;
+            padding-bottom: 5px;
+            border-bottom-width: 5px;
+            border-bottom-color: #92d050;
+            border-bottom-style: solid;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #4b4b4b;
+        }
+    }
+
+    .image-profile {
+        margin-top: 40px;
+    }
+
+    .experience {
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 90%;
+        padding: 8px 0px;
+        margin-bottom: 10px;
+        border-top-width: 2px;
+        border-top-color: #4471c4;
+        border-top-style: dotted;
+
+        p {
+            margin: 0;
+            color: #002060;
+            font-weight: bold;
+
+            span {
+                color: #595959;
+            }
+        }
+
+        .corp-projects {
+            color: #1f3863;
+            font-size: small;
+            font-weight: normal;
+        }
+    }
+
+    .image-profile {
+        flex: 1;
+        background-color: #0070c0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            text-transform: uppercase;
+            color: white;
+            margin-top: 10px;
+            margin-bottom: 40px;
+        }
+    }
+</style>

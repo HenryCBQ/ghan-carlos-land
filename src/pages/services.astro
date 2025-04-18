@@ -1,0 +1,131 @@
+---
+import BaseLayout from "@layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Oferta de servicios">
+    <section>
+        <h1>Servicios & productos</h1>
+        <article class="first-service">
+            <h2>Programa de gobernabilidad <span class="color-gray">de la información y los datos</span> <span class="color-blue">empresariales</span>​</h2>
+
+            <div class="summary-service">
+                <div>
+                    <h3>Entregables:</h3>
+                    <img src="/icon_files.svg" alt="Ícono decorativo documentos">
+                </div>
+
+                <ol>
+                    <li>Líneas o ejes de acción estratégicos por tema/proceso.</li>
+                    <li>Indicadores consolidados por cada proceso del negocio.</li>
+                    <li>Modelo técnico operativo definiendo cada fase de las etapas técnicas.</li>
+                    <li>Matriz de optimizaciones producto de los ejes de acciones medidos con sus correspondientes indicadores. Estas serán declaradas una a una por cada proceso o tema.​</li>
+                    <li>Plan de Acción o Plan de Trabajo (con fechas definidas de cumplimiento), completa y parcialmente.​</li>
+                    <li>Tablas de Retención Documental Electrónicas - T.R.D (anexos: (1) Cuadro de Clasificación Documental; (2) Matriz documental consolidada con todas las series y subseries por proceso.</li>
+                </ol>
+            </div>
+        </article>
+
+        <article class="secundary-service">
+            <img src="/icon_advisor.png" alt="Ícono decorativo de oferta en servios de consultoria">
+            <h2>Oferta de Servicio en Consultoría personalizada <span>(Virtual - In Situ)</span></h2>
+        </article>
+    </section>
+</BaseLayout>
+
+<style>
+    section {
+        max-width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+        color: #002060;
+        font-weight: bold;
+        margin-top: 40px;
+        font-size: 35px;
+        padding: 10px;
+        background-color: #f2f2f2;
+        border-bottom-width: 12px;
+        border-bottom-color: #92d050;
+        border-bottom-style: solid;
+    }
+
+    .first-service {
+        margin-bottom: 30px;
+
+        h2 {
+            text-transform: uppercase;
+            color: #002060;
+            margin: 20px 0px;
+        }
+    }
+
+    .color-gray {
+        color: #3a3a3a;
+    }
+
+    .color-blue {
+        color: #0070c0;
+    }
+
+    .summary-service {
+        display: flex;
+        align-items: flex-start;
+
+        h3 {
+            color: #002060;
+            font-weight: bold;
+            padding: 5px;
+            margin-bottom: 15px;
+            background-color: #92d050;
+            text-decoration: 2px solid underline #156082;
+            text-underline-position: under;
+            text-underline-offset: 10px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                margin: auto;
+                max-width: 80px;
+            }
+        }
+
+        li::marker {
+            font-weight: bold;
+        }
+
+        li {
+            font-weight: 500;
+        }
+    }
+
+    .secundary-service {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        border-top: 2px solid #156082;
+        border-bottom: 2px solid #156082;
+        padding: 20px;
+
+        h2 {
+            font-weight: bold;
+            color: #002060;
+            
+            span {
+                color: #595959;
+            }
+        }
+
+        img {
+            max-width: 70px;
+        }
+    }
+</style>

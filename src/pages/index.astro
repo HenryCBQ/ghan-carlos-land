@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '@layouts/BaseLayout.astro';
-import NavMenu from '@components/NavMenu.astro'; 
 import Summary from '@components/Summary.astro';
 import BlogPost from '@components/BlogPost.astro';
 
@@ -10,18 +9,8 @@ const blogPost = await getCollection('blog');
 ---
 
 <Layout title='Inteligencia de negocios'>
-    <header>
-        <NavMenu />
-        <Summary />
-    </header>
-
-    <main>
-        { blogPost.map((post) => <BlogPost post={post} />) }
-    </main>
-	
-    <footer>
-
-    </footer>
+    <Summary />
+    { blogPost.map((post) => <BlogPost post={post} />) }
 </Layout>
 
 <style>
