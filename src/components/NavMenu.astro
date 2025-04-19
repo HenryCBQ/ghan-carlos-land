@@ -1,4 +1,5 @@
 ---
+import ModalContact from "@components/ModalContact.astro"
 ---
 
 <nav>
@@ -7,10 +8,19 @@
         <span>|</span>
         <a href="/services">Servicios</a>
         <span>|</span>
-        <a href="#">Contactos</a>
+        <button id="show-contact-dialog">Contacto</button>
         <span>|</span>
         <a href="/profile-ghan-carlos">Perfil Ghan Carlos Areiza</a>
     </div>
+
+    <dialog id="dialog-contact">
+        <form>
+            <button formmethod="dialog">
+                <img src="/icon_close_modal.svg" alt="Ícono para cerrar ventana modal">
+            </button>
+        </form>
+        <ModalContact />
+    </dialog>
 </nav>
 
 <style>
@@ -27,11 +37,21 @@
         justify-content: space-between;
     }
 
-    a {
+    dialog {
+        width: 50%;
+        border: none;
+    }
+
+    button {
+        background: none;
+        border: none;
+    }
+
+    a, button {
         text-transform: uppercase;
     }
 
-    a,span {
+    a,span,button {
         color: white;
         font-weight: bold;
         font-size: large;
@@ -40,4 +60,19 @@
     a:hover {
         color: #eeededee;
     }
+
+    button:hover {
+        color: #eeededee;
+        cursor: pointer;
+    }
 </style>
+
+<script>
+    const showButton = document.querySelector("#show-contact-dialog");
+    if (showButton) {
+        showButton.addEventListener("click", function () {
+            const alertDialog = document.querySelector("#dialog-contact") as HTMLDialogElement;
+            alertDialog.showModal();
+        });
+    }
+</script>
