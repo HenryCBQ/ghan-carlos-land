@@ -1,0 +1,78 @@
+---
+import { Image } from "astro:assets";
+import imgBook from "@assets/img_book.webp";
+---
+
+<div class="container">
+    <div class="description-book">
+        <Image 
+            src={imgBook} 
+            alt="Imagen del libro Inteligencia de Negocios: Gestión de datos e información"
+            width={250}
+        />
+
+        <article>
+            <p class="title-book">Libro digital: <em>“Inteligencia de negocios: Gestión de datos e información digital en los negocios</em></p>
+            <p class="text-edicion">Edición 1 - <em>(Español & English)</em></p>
+        </article>
+    </div>
+
+    <div class="text-by">
+        <a 
+            href="https://www.linkedin.com/in/henry-alexis-ceballos-quintero-4379b0189/"
+            target="_blank"
+        >
+            <p>By Henry Alexis Ceballos Quintero</p>
+            <p>Full Stack Developer</p>
+        </a>
+    </div>
+</div>
+
+<style>
+    .container {
+        margin-top: 5rem;
+    }
+
+    .description-book {
+        max-width: 70%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .title-book {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: larger;
+        color: #4e95d9;
+        margin-bottom: 1rem;
+
+        em {
+            color: #002060;
+        }
+    }
+
+    .text-edicion {
+        color: #7f7f7f;
+        font-weight: bold;
+        font-size: larger;
+
+        em {
+            color: #595959;
+        }
+    }
+
+    .text-by {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        background-color: #0070c0;
+
+        p {
+            color: white;
+            font-weight: bold;
+            font-size: medium;
+            text-align: center;
+        }
+    }
+</style>

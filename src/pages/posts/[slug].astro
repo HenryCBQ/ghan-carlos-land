@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
 import Layout from '@layouts/BaseLayout.astro';
+import { Image } from "astro:assets";
 
 export const getStaticPaths = (async () => {
     const blogPosts = await getCollection('blog')
@@ -19,8 +20,54 @@ const { Content } = await post.render();
 ---
 
 <Layout title={ frontmatter.title }>
-    <div>
-        <h1>{ frontmatter.title }</h1>
-        <Content />
+    <div class="container">
+        <section class="header-post">
+            <Image 
+                src={frontmatter.image} 
+                alt={frontmatter.title} 
+                width={700}
+            />
+            <h1>
+                { frontmatter.title } <br>
+                <span>{ frontmatter.description }</span>
+            </h1>
+            <article>
+            </article>
+        </section>
+
+        <section class="body-post">
+            <Content />
+        </section>
     </div>
 </Layout>
+
+<style>
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .header-post {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        h1 {
+            color: #002060;
+            text-transform: uppercase;
+            font-weight: bold;
+
+            span {
+                display: inline-block;
+                color: #7f7f7f;
+                font-size: medium;
+                font-weight: bold;
+                text-transform: none;
+                line-height: 1.1;
+                margin-top: 5px;
+            }
+        }
+    }
+</style>
