@@ -26,15 +26,14 @@ import ModalContact from "@components/ModalContact.astro"
 <style>
     nav {
         background-color: #0070C0;     
-        padding: 18px;
+        padding: 10px;
         display: flex;
         justify-content: end;
-    }
-
-    div {
-        width: 50%;
-        display: flex;
-        justify-content: space-between;
+        align-items: center;
+        height: 55px;
+        position: fixed;
+        inset: 0;
+        z-index: 1000
     }
 
     dialog {
@@ -68,11 +67,13 @@ import ModalContact from "@components/ModalContact.astro"
 </style>
 
 <script>
-    const showButton = document.querySelector("#show-contact-dialog");
-    if (showButton) {
-        showButton.addEventListener("click", function () {
-            const alertDialog = document.querySelector("#dialog-contact") as HTMLDialogElement;
-            alertDialog.showModal();
-        });
-    }
+    document.addEventListener("astro:page-load", () => {
+        const showButton = document.querySelector("#show-contact-dialog");
+        if (showButton) {
+            showButton.addEventListener("click", function () {
+                const alertDialog = document.querySelector("#dialog-contact") as HTMLDialogElement;
+                alertDialog.showModal();
+            });
+        }
+    });
 </script>

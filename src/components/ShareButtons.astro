@@ -1,0 +1,85 @@
+---
+const pageUrl = Astro.url.href;
+const pageTitle = Astro.props.title;
+const encodedPageUrl = encodeURIComponent(pageUrl);
+const encodedPageTitle = encodeURIComponent(pageTitle);
+const shareText = encodeURIComponent(`${pageTitle} - ${pageUrl}`);
+---
+
+<div>
+    <p>Lee y comparte</p>
+
+    <a 
+        href={`https://www.linkedin.com/shareArticle?mini=true`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Compartir en Linkeding"
+    >
+        <img 
+            src="/icon_linkedin.png" 
+            alt="Ícono de Linkedin"
+            width="24px"
+        >
+    </a>
+
+    <a 
+        href={`https://www.facebook.com/sharer/sharer.php?u=${encodedPageUrl}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Compartir en Faceebok"
+    >
+        <img 
+            src="/icon_facebook.webp" 
+            alt="Ícono de Faceebook"
+            width="24px"
+        >
+    </a>
+
+    <a 
+        href={`https://twitter.com/intent/tweet?url=${encodedPageUrl}&text=${encodedPageTitle}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Compartir en la red social X"
+    >
+        <img 
+            src="/icon_twitter.webp" 
+            alt="Ícono de X"
+            width="24px"
+        >
+    </a>
+
+    <a 
+        href={`https://api.whatsapp.com/send?text=${shareText}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Compartir en WhatsApp"
+    >
+        <img 
+            src="/icon_whatsapp.png" 
+            alt="Ícono de WhatsApp"
+            width="24px"
+        >
+    </a>
+</div>
+
+<style>
+    div {
+        padding: 1rem 0rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        border-top: 1px solid #156082;
+        border-bottom: 1px solid #156082;
+
+        a {
+            margin-left: 1rem;
+        }
+    }
+
+    p {
+        font-size: large;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #0070c0;
+    }
+</style>

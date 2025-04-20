@@ -1,8 +1,9 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import Layout from '@layouts/BaseLayout.astro';
 import { Image } from "astro:assets";
+import Layout from '@layouts/BaseLayout.astro';
+import ShareButtons from "@components/ShareButtons.astro";
 
 export const getStaticPaths = (async () => {
     const blogPosts = await getCollection('blog')
@@ -36,6 +37,9 @@ const { Content } = await post.render();
         </section>
 
         <section class="body-post">
+            <ShareButtons 
+                title={ frontmatter.title }
+            />
             <Content />
         </section>
     </div>
@@ -48,7 +52,7 @@ const { Content } = await post.render();
     }
 
     .header-post {
-        margin-top: 3rem;
+        margin-top: 5rem;
         margin-bottom: 2rem;
         display: flex;
         align-items: center;
