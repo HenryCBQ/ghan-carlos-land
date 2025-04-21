@@ -8,6 +8,8 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const imagePath = '/img_page_preview.webp';
+const absoluteImageUrl = new URL(imagePath, Astro.site).href;
 ---
 
 <!doctype html>
@@ -17,6 +19,12 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
+
+		<meta property="og:title" content="Inteligencia de negocios" />
+		<meta property="og:description" content="Inteligencia de negocios, gestión de datos e información digital en los negocios" />
+		<meta property="og:image" content={absoluteImageUrl} />
+		<meta property="og:url" content="https://ghan-carlos-land.vercel.app/" />
+
 		<ClientRouter />
 		<title>{title}</title>
 	</head>
