@@ -128,4 +128,40 @@ import BaseLayout from "@layouts/BaseLayout.astro";
             max-width: 70px;
         }
     }
+
+    @media (width <= 900px) {
+        section {
+            max-width: 95%;
+        }
+
+        .first-service {
+            h2 {
+                font-size: medium;
+            }
+        }
+        
+        .summary-service {
+            flex-direction: column;
+
+            div {
+                width: 90%;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: auto;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+
+            h3 {
+                margin: 0px;
+                text-underline-offset: 5px;
+            }
+        }
+
+        .secundary-service {
+            h2 {
+                font-size: medium;
+            }
+        }
+    }
 </style>

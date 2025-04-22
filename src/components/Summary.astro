@@ -10,7 +10,11 @@ import headerRelations from "@assets/header_decorative-relationships.png"
     </div>
     
     <div class="content-image">
-        <Image src={ headerRelations } alt="Imagen de portada" width={350} />
+        <Image 
+            src={ headerRelations } 
+            alt="Imagen de portada"
+            class="img-relation"
+        />
     </div>
 
     <div class="content-atributes">
@@ -66,6 +70,11 @@ import headerRelations from "@assets/header_decorative-relationships.png"
         }
     }
 
+    .img-relation {
+        max-width: 350px;
+        max-height: 350px;
+    }
+
     h1 {
         color: #92D050;
         font-weight: bold;
@@ -79,5 +88,37 @@ import headerRelations from "@assets/header_decorative-relationships.png"
         font-weight: bold;
         text-transform: uppercase;
         font-size: medium;
+    }
+
+    @media (width <= 900px) {
+        .container {
+            flex-direction: column;
+            gap: 0px;
+            margin-top: 40px;
+        }
+
+        .content-atributes {
+            gap: 2px;
+
+            p {
+                font-size: smaller;
+                padding: 5px;
+            }
+        }
+
+        .img-relation {
+            max-width: 150px;
+            max-height: 150px;
+        }
+
+        h1 {
+            font-size: x-large;
+            margin: 5px 10px;
+        }
+
+        h2 {
+            font-size: small;
+            margin: 5px 10px;
+        }
     }
 </style>

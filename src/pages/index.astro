@@ -12,9 +12,3 @@ const blogPost = await getCollection('blog');
     <Summary />
     { blogPost.map((post) => <BlogPost post={post} />) }
 </Layout>
-
-<style>
-    header {
-        
-    }
-</style>

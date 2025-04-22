@@ -15,8 +15,8 @@ const frontmatter = post.data;
         src={ frontmatter.image }
         alt={ frontmatter.title }
         width={400}
-        class="image-post"
         quality= "low"
+        class="img-post"
     />
 
     <div>
@@ -52,16 +52,43 @@ const frontmatter = post.data;
             text-transform: uppercase;
         }
 
-        .text-description {
-            color: #7f7f7f;
-            font-weight: bold;
+    }
+
+    .text-description {
+        color: #7f7f7f;
+        font-weight: bold;
+        font-size: medium;
+        margin: 1rem 0rem;
+    }
+
+    .text-autor {
+        color: black;
+        font-weight: bold;
+    }
+
+    @media (width <= 900px) {
+        .container {
+            max-width: 95%;
+            flex-direction: column;
+            padding: 2px;
+        }
+
+        .img-post {
+            max-width: 350px;
+            max-height: 350px;
+        }
+
+        h1 {
             font-size: medium;
-            margin: 1rem 0rem;
+        }
+
+        .text-description {
+            font-size: smaller;
+            margin: 0.5rem 0rem;
         }
 
         .text-autor {
-            color: black;
-            font-weight: bold;
+            font-size: smaller;
         }
     }
 </style>
