@@ -5,6 +5,8 @@ import { Image } from "astro:assets";
 import Layout from '@layouts/BaseLayout.astro';
 import ShareButtons from "@components/ShareButtons.astro";
 
+export const prerender = true;
+
 export const getStaticPaths = (async () => {
     const blogPosts = await getCollection('blog')
 
