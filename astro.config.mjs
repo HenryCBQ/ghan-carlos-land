@@ -7,10 +7,10 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   integrations: [mdx()],
   site: "https://ghan-carlos-land.pages.dev/",
-  adapter: cloudflare({
-    imageService: 'cloudflare'
-  }),
   output: 'server',
+  adapter: cloudflare({
+    imageService: 'passthrough',
+  }),
   experimental: {
     session: true
   }
