@@ -69,7 +69,7 @@ import imgGhanCarlos from "@assets/img_ghan_carlos.jpg"
     }
 
     .profile {
-        flex: 2;
+        flex: 1;
         margin-top: 90px;
 
         h1 {
@@ -91,10 +91,6 @@ import imgGhanCarlos from "@assets/img_ghan_carlos.jpg"
             margin-bottom: 10px;
             color: #4b4b4b;
         }
-    }
-
-    .image-profile {
-        margin-top: 90px;
     }
 
     .experience {
@@ -128,6 +124,7 @@ import imgGhanCarlos from "@assets/img_ghan_carlos.jpg"
 
     .image-profile {
         flex: 1;
+        margin-top: 90px;
         background-color: #0070c0;
         display: flex;
         flex-direction: column;
@@ -168,6 +165,38 @@ import imgGhanCarlos from "@assets/img_ghan_carlos.jpg"
             width: 45%;
             height: 2px;
             background-color: #fff;
+        }
+    }
+
+    @media (width <= 1000px) {
+        section {
+            flex-direction: column;
+        }
+
+        .image-profile {
+            margin-top: 30px;
+            padding-bottom: 20px;
+
+            h1 {
+                margin: 15px 0;
+            }
+        }
+    }
+
+    @media (width <= 500px) {
+        section {
+            width: 100%;
+            margin-top: 70px;
+        }
+
+        .profile {
+            margin: 0 10px;
+        }
+
+        .image-profile {
+            h1 {
+                font-size: large;
+            }
         }
     }
 </style>

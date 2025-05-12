@@ -11,23 +11,23 @@ const frontmatter = post.data;
 ---
 
 <div class="container">
-    <Image 
-        src={ frontmatter.image }
-        alt={ frontmatter.title }
-        width={400}
-        quality= "low"
-        class="img-post"
-    />
+    <a 
+        href={ `/posts/${post.id}` }
+    >
+        <Image 
+            src={ frontmatter.image }
+            alt={ frontmatter.title }
+            width={400}
+            quality= "low"
+            class="img-post"
+        />
 
-    <div>
-        <a 
-            href={ `/posts/${post.id}` }
-        >
+        <div>
             <h1>{ frontmatter.title }</h1>
             <p class="text-description">{ frontmatter.description }</p>
             <p class="text-autor">Por { frontmatter.author }</p>
-        </a>
-    </div>
+        </div>
+    </a>
 </div>
 
 <style>
@@ -35,16 +35,15 @@ const frontmatter = post.data;
         max-width: 85%;
         margin: auto;
         margin-top: 2rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
         padding: 10px;
         border: 2px solid #042433;
     }
 
     a {
+        display: flex;
+        align-items: center;
         text-align: end;
+        gap: 1rem;
 
         h1 {
             color: #002060;
@@ -58,7 +57,7 @@ const frontmatter = post.data;
         color: #7f7f7f;
         font-weight: bold;
         font-size: medium;
-        margin: 1rem 0rem;
+        margin: 0.5rem 0rem;
     }
 
     .text-autor {
@@ -69,8 +68,6 @@ const frontmatter = post.data;
     @media (width <= 900px) {
         .container {
             max-width: 95%;
-            flex-direction: column;
-            padding: 2px;
         }
 
         .img-post {
@@ -89,6 +86,16 @@ const frontmatter = post.data;
 
         .text-autor {
             font-size: smaller;
+        }
+    }
+
+    @media (width <= 600px) {
+        .container {
+            max-width: 365px;
+        }
+
+        a {
+            flex-direction: column;
         }
     }
 </style>

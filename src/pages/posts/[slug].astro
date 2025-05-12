@@ -28,7 +28,8 @@ const { Content } = await post.render();
             <Image 
                 src={frontmatter.image} 
                 alt={frontmatter.title} 
-                width={700}
+                width={1000}
+                class="img"
             />
             <h1>
                 { frontmatter.title } <br>
@@ -49,15 +50,14 @@ const { Content } = await post.render();
 
 <style>
     .container {
-        width: 90%;
+        max-width: 75%;
         margin: auto;
     }
 
     .header-post {
         margin-top: 5rem;
-        margin-bottom: 2rem;
         display: flex;
-        align-items: center;
+        flex-direction: column;
         gap: 1.5rem;
 
         h1 {
@@ -74,6 +74,22 @@ const { Content } = await post.render();
                 line-height: 1.1;
                 margin-top: 5px;
             }
+        }
+    }
+
+    .img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (width <= 600px) {
+        .container {
+            max-width: 100%;
+            margin: 0 10px;
+        }
+
+        .header-post {
+            width: 100%;
         }
     }
 </style>

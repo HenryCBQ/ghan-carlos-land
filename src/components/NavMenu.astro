@@ -37,7 +37,7 @@ import ModalContact from "@components/ModalContact.astro"
     }
 
     dialog {
-        width: 50%;
+        width: 70%;
         border: none;
     }
 
@@ -68,6 +68,16 @@ import ModalContact from "@components/ModalContact.astro"
     @media (width <= 900px) {
         a,span,button {
             font-size: smaller;
+        }
+    }
+
+    @media (width <= 470px) {
+        nav {
+            justify-content: center;
+        }
+
+        a,span,button {
+            font-size: x-small;
         }
     }
 </style>

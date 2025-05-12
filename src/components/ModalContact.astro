@@ -1,7 +1,7 @@
 ---
 ---
 
-<div>
+<div class="container">
     <h1>Contacto:</h1>
     <div class="content-links">
         <a 
@@ -9,15 +9,15 @@
             target="_blank"
             rel="noopener noreferrer"
         >
-            <img src="/icon_email.svg" alt="Ícono de correo electrónico" width="40">
+            <img src="/icon_email.svg" alt="Ícono de correo electrónico" width="40" class="img">
             <p>giancarlosproyectos@gmail.com</p>
         </a>
         <a href="https://api.whatsapp.com/send/?phone=573218870001" target="_blank">
-            <img src="/icon_whatsapp.png" alt="Ícono de Whatsapp" width="40">
+            <img src="/icon_whatsapp.png" alt="Ícono de Whatsapp" width="40" class="img">
             <p>+57 (321) 887 00 01</p>
         </a>
         <a href="https://www.linkedin.com/in/ghan-carlos-areiza-salazar-7a859420/" target="_blank">
-            <img src="/icon_linkedin.png" alt="Ícono de Linkedin" width="40">
+            <img src="/icon_linkedin.png" alt="Ícono de Linkedin" width="40" class="img">
             <p>Ghancarlos Areiza</p>
         </a>
     </div>
@@ -52,6 +52,25 @@
             font-size: large;
             color: #002060;
             font-weight: bold;
+        }
+    }
+
+    @media (width <= 700px) {
+        .content-links {
+            max-width: 100%;
+        }
+
+        a {
+            padding: 5px;
+            gap: 5px;
+
+            p {
+                font-size: small;
+            }
+        }
+
+        .img {
+            width: 25px;
         }
     }
 </style>
