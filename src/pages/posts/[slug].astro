@@ -20,7 +20,7 @@ export const getStaticPaths = (async () => {
 
 const { post } = Astro.props;
 const frontmatter = post.data;
-const canonicalUrl = new URL(`/blog/${post.id}`, Astro.site).href;
+const canonicalUrl = new URL(`/posts/${post.id}`, Astro.site).href;
 const { Content } = await post.render();
 ---
 
