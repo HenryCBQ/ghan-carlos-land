@@ -4,21 +4,13 @@ import { Image } from "astro:assets";
 interface Props {
     src: string;
     alt: string;
-    width: number;
-    height: number;
 }
 
-const {src, alt, width,height} = Astro.props;
+const {src, alt} = Astro.props;
 ---
 
 <div>
-    <Image
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      class="img"
-    />
+    <img src={src} alt={alt} class="img" />
 </div>
 
 <style>
