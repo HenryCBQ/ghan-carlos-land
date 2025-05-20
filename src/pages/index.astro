@@ -8,7 +8,7 @@ const blogPost = await getCollection('blog');
 
 ---
 
-<Layout title='Inteligencia de negocios'>
+<Layout title='Inteligencia de negocios' description='Inteligencia de negocios, gestión de datos e información digital en los negocios'>
     <Summary />
     { blogPost.map((post) => <BlogPost post={post} />) }
 </Layout>

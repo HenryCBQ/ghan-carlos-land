@@ -20,11 +20,11 @@ export const getStaticPaths = (async () => {
 
 const { post } = Astro.props;
 const frontmatter = post.data;
-
+const canonicalUrl = new URL(`/blog/${post.id}`, Astro.site).href;
 const { Content } = await post.render();
 ---
 
-<Layout title={ frontmatter.title }>
+<Layout title={ frontmatter.title } description={ frontmatter.description } imgPath={ frontmatter.image.src } url={ canonicalUrl }>
     <div class="container">
         <section class="header-post">
             <Image 
