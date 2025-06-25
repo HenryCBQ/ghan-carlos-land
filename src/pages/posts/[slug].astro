@@ -24,7 +24,14 @@ const canonicalUrl = new URL(`/posts/${post.id}`, Astro.site).href;
 const { Content } = await post.render();
 ---
 
-<Layout title={ frontmatter.title } description={ frontmatter.description } imgPath={ frontmatter.image.src } url={ canonicalUrl }>
+<Layout 
+    title={ frontmatter.title } 
+    description={ frontmatter.description } 
+    imgPath={ frontmatter.image.src } 
+    url={ canonicalUrl }
+    pubDate={ frontmatter.pubDate }
+    author={ frontmatter.author }
+>
     <div class="container">
         <section class="header-post">
             <Image 
